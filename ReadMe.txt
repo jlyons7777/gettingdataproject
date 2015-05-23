@@ -16,18 +16,18 @@ This script was developed in a specific operating environment and set of conditi
 1. This script was developed on Windows 8.1 and R 3.1.2.  It may not function properly in other environments
 
 2. This script requires that the following files be in your working directory.  This files can be downloaded from the link(s) provided above.
-*features.txt
-*X_test.txt
-*y_test.txt
-*subject_test.txt
-*X_train.txt
-*y_train.txt
-*subject_train.txt
-*activity_labels.txt
+* features.txt
+* X_test.txt
+* y_test.txt
+* subject_test.txt
+* X_train.txt
+* y_train.txt
+* subject_train.txt
+* activity_labels.txt
 
 3. This script requires the use of the following R packages
-*plyr
-*reshape2
+* plyr
+* reshape2
 
 #Details
 
@@ -36,13 +36,13 @@ The “run_analysis.R” script does the following
 1. Merges the training and the test sets to create one data set.
 The study underlying this data included both “test” and “training” data for given individuals (called subjects in this study) performing a variety of activities (for example sitting or walking).  The data is segregated into two different groups of data in “test” or “train” files.  Each group of files contains 3 files that must be combined to get the full data set.  
 
-*“subject_test.txt”/”subject_train.txt” - these files contain the data from indicating which subject obtained the reading for each row in the corresponding "X_test" or "X_train" data files.
+* “subject_test.txt”/”subject_train.txt” - these files contain the data from indicating which subject obtained the reading for each row in the corresponding "X_test" or "X_train" data files.
 
-*“y_test.txt”/”y_train.txt” - these files indicate the activities that were undertaken for each set of readings.  There is one rown in each of these files for each row in the "X_test" and "X_train" data files.
+* “y_test.txt”/”y_train.txt” - these files indicate the activities that were undertaken for each set of readings.  There is one rown in each of these files for each row in the "X_test" and "X_train" data files.
 
-*"X_test.txt”/”X_train.txt” – these files contain the data from the accelerometers for the test and training sets.  Each column in these tables is a specific measurement from the accelerometers.
+* "X_test.txt”/”X_train.txt” – these files contain the data from the accelerometers for the test and training sets.  Each column in these tables is a specific measurement from the accelerometers.
 
-*"features.txt" - this file is contains the names of the measures found in the "X_test" and "X_train" data files.  There is one row in this file for every column of metrics in the "X_test" and "X_train" files.
+* "features.txt" - this file is contains the names of the measures found in the "X_test" and "X_train" data files.  There is one row in this file for every column of metrics in the "X_test" and "X_train" files.
 
 The run_analysis.R script reads in the features.txt file to establish the column names for the files.  Then the script reads in the relevant "training" data, column binding the "X_train.txt" to "y_train.txt" and "subject_train.txt".  The sript does the same with the "test" data and then row binds the training and test data together to create a master data set.
 
@@ -57,9 +57,9 @@ Each name includes a metric from the accelerometer, and indication if the measur
 
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 The data produced from the raw data is a tidy dataset and meets the following principles
-*Each variable has one column.  In this case there is a column for the subject, activity, variable (measurement) and the value measured.
-*Each observation of the variable has one row.  In this case there is one row for each instance of the subject, activity and variable.
-*There is only one table with this type of data.  Since this data all pertains to the accelerometer readings of subjects in different activities it is being considered one task.
+* Each variable has one column.  In this case there is a column for the subject, activity, variable (measurement) and the value measured.
+* Each observation of the variable has one row.  In this case there is one row for each instance of the subject, activity and variable.
+* There is only one table with this type of data.  Since this data all pertains to the accelerometer readings of subjects in different activities it is being considered one task.
 
 There has been some debate on whether a wide or narrow dataset would the the prime choice for this project.  Arguments can be made for either form and there is a discussion on the topic available at https://class.coursera.org/getdata-014/forum/thread?thread_id=31 if the reader might question the choise made here.
 
